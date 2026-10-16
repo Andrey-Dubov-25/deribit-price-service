@@ -70,10 +70,8 @@ class DeribitClient:
                     await asyncio.sleep(0.5 * 2 ** (attempt - 1))
 
         raise DeribitClientError(
-            
                 f"Запрос к Deribit не удался после {self._max_retries} "
                 f"попыток: {last_error}"
-            
         )
 
     async def _request_index_price(
