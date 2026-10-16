@@ -11,9 +11,17 @@ aiohttp, PostgreSQL 16, Docker Compose, pytest, ruff.
 
 ## Быстрый старт
 
-```bash
-docker compose up --build
-```
+1. Скопируйте настройки для Docker:
+
+   ```bash
+   cp .env.docker.example .env.docker
+   ```
+
+2. Запустите:
+
+   ```bash
+   docker compose up --build
+   ```
 
 - API: http://localhost:8000
 - Swagger: http://localhost:8000/docs
@@ -56,7 +64,11 @@ curl "http://localhost:8000/api/v1/prices/filter?ticker=btc_usd&from_ts=17920030
    docker run --name deribit-redis -p 6379:6379 -d redis:7-alpine
    ```
 
-2. Скопировать `.env.example` в `.env` и заменить хосты `db`/`redis` на `localhost`.
+2. Скопировать настройки для локального запуска.
+
+   ```bash
+   cp .env.example .env
+   ```
 
 3. Установить зависимости и накатить миграции:
 
